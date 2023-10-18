@@ -3,6 +3,8 @@ import { HiMicrophone } from 'react-icons/hi';
 import { FiSend } from 'react-icons/fi';
 import styled from 'styled-components';
 import TextareaAutosize from 'react-textarea-autosize';
+import { Mutation, useMutation, useQueryClient } from '@tanstack/react-query';
+import { updateTask } from '../api/UpdateQuery';
 
 const TaskInputComponent = styled.div`
     display: flex;
@@ -61,9 +63,10 @@ export default function TaskInputComponents() {
     const eventInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value);
     };
+    const mutation = useMutation({ mutationFn: updateTask });
 
     const onSubmit = () => {
-        console.log('success');
+        mutation.mutate(inputText);
     };
     const onVoice = () => {
         console.log('voice');

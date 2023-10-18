@@ -3,6 +3,7 @@ import ConsolePage from './pages/ConsolePage';
 import styled from 'styled-components';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import GlobalStyle from './styles/GlobalStyles';
 
 const AppDiv = styled.div`
     width: 100vw;
@@ -21,6 +22,7 @@ const queryClient = new QueryClient({
 export default function App() {
     return (
         <QueryClientProvider client={queryClient}>
+            <GlobalStyle />
             <ReactQueryDevtools />
             <AppDiv>
                 <ConsolePage />
