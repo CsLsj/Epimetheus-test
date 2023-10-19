@@ -1,0 +1,7 @@
+prompt: C:\capstone\Epimetheus\backend\epimetheus\src\main\resources\static\prompt.txt
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mydb
+llama:
+  url: http://esc.hcailab.uos.ac.kr/v1/chat/completions
